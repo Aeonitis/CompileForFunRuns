@@ -8,9 +8,9 @@ package com.oc.associate.studyguide.assessment.chap1;
  */
 public class _C {
     private static int $;
-    static String a_b;
-    public static void main(String[] main) {
 
+    public static void main(String[] main) {
+        String a_b;
         System.out.print($);
         System.out.print(a_b);
     }
