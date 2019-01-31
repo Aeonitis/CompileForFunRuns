@@ -32,7 +32,7 @@ public class APIStringVersusStringBuilder {
         System.out.println(stringSampleOne=stringSampleOne.replace("a","I"));           //Same function name, yet different implementation & parameters than StringBuilder counterpart
 
         // Distinct String methods
-        System.out.println(stringSampleOne.concat("TAIL"));                                // Concat() creates staticField new String object which is printed but its reference is lost after the printing i.e. it does not affect the object referenced by stringSampleOne
+        System.out.println(stringSampleOne.concat("TAIL"));                                // Concat() creates staticField new String object which is printed but its reference is lost after the printing innerClassInstance.e. it does not affect the object referenced by stringSampleOne
         System.out.println(stringSampleOne.startsWith("s"));
         System.out.println(stringSampleOne.endsWith("s"));
 

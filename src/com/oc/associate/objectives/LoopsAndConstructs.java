@@ -55,9 +55,9 @@ public class LoopsAndConstructs {
 
 
     /**
-     * The statement:  if(i < j) continue OUTERLOOP; else break INNERLOOP; only makes sure that the inner loop does not iterate more than once.
-     * i.e. for each iteration of i, j only takes the value of 4 and then the j loop terminates, either because of continue OUTERLOOP; or because of break INNERLOOP;.
-     * When the loop for(i = 0; i < 4; i++) ends, the value of i is 4 and not 3. Similarly, if there were no statement inside inner loop, the value of j after the end of the loop would have been 0 and not 1.
+     * The statement:  if(innerClassInstance < j) continue OUTERLOOP; else break INNERLOOP; only makes sure that the inner loop does not iterate more than once.
+     * innerClassInstance.e. for each iteration of innerClassInstance, j only takes the value of 4 and then the j loop terminates, either because of continue OUTERLOOP; or because of break INNERLOOP;.
+     * When the loop for(innerClassInstance = 0; innerClassInstance < 4; innerClassInstance++) ends, the value of innerClassInstance is 4 and not 3. Similarly, if there were no statement inside inner loop, the value of j after the end of the loop would have been 0 and not 1.
      */
     public static void runTestFour() {
         int i = 0, j = 0;
@@ -66,7 +66,7 @@ public class LoopsAndConstructs {
             System.out.println("In OUTERLOOP:");
             INNERLOOP:
             for (j = 4; j > 0; j--) {
-                System.out.println("\tIn INNERLOOP: i=" + i + ",j=" + j);
+                System.out.println("\tIn INNERLOOP: innerClassInstance=" + i + ",j=" + j);
                 if (i < j) {
                     System.out.println("\t\tcontinue outer ⤣");
                     continue OUTERLOOP;

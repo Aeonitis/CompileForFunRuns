@@ -7,11 +7,11 @@ public class StreamOptionals {
 
   public static void main(String[] args) {
 
-    // The range method includes the starting number but not the ending number i.e. 0, 1, 2, 3, and 4.
+    // The range method includes the starting number but not the ending number innerClassInstance.e. 0, 1, 2, 3, and 4.
     IntStream myIntStream = IntStream.range(0, 5);
 
     /**
-     * The average method of all numeric streams (i.e. IntStream, LongStream, and DoubleStream) returns an
+     * The average method of all numeric streams (innerClassInstance.e. IntStream, LongStream, and DoubleStream) returns an
      * OptionalDouble and not a double. It never returns a null.
      *
      * In this case, the average of the given 5 numbers is 2,
@@ -22,7 +22,7 @@ public class StreamOptionals {
 
     /**
      * The sum method which always returns a primitive value of the same type as
-     *      the type of the stream (i.e. int, long, or double).
+     *      the type of the stream (innerClassInstance.e. int, long, or double).
      */
     int intStreamSum = myIntStream.sum();
     System.out.println(intStreamSum);

@@ -20,7 +20,7 @@ public class StreamShortCircuitingTerminalOperation {
 //     * Note: filter is an intermediate operation, which means it will not execute until a terminal operation is invoked on the stream.
 //     * allMatch is a short circuiting terminal operation.
 //     * Thus, when allMatch is invoked, the filter method will be invoked and it will keep only
-//     * those elements in the stream that satisfy the condition given in the filter i.e. the string must be a certain length.  
+//     * those elements in the stream that satisfy the condition given in the filter innerClassInstance.e. the string must be a certain length.  
 //     * After this method is done, only three elements will be left in the stream.
 //     * When allMatch is invoked, the code in predicate will be executed for each element until it finds a mismatch.
 //     */

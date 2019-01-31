@@ -42,7 +42,7 @@ abstract class SubclassValidViaAbstraction implements ExtendingInterface {}
  - Neither can be instantiated directly. They require a concrete subclass to be instantiated.
  *
  * DIFFERENCES:
- - All members of an interface (i.e. fields/variables as well as methods) are always public. Interface variables are assumed to be public static final.
+ - All members of an interface (innerClassInstance.e. fields/variables as well as methods) are always public. Interface variables are assumed to be public static final.
  - Only interfaces can be implemented using the implement keyword.
  - All methods within them cannot be assumed to be abstract. An abstract class may contain concrete methods.
     Since Java 8, interfaces may also contain concrete methods in form of static or default methods.

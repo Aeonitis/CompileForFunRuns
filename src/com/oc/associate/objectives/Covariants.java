@@ -32,7 +32,7 @@ class MP3Player extends Player implements Display {
     /**
      * Invalid case one
      */
-//    public String showTrack(int trackNumber) { return "7"; }  // int and String are not covariant returns types i.e. int is not a subclass of String
+//    public String showTrack(int trackNumber) { return "7"; }  // int and String are not covariant returns types innerClassInstance.e. int is not a subclass of String
 
     /**
      * Invalid case two

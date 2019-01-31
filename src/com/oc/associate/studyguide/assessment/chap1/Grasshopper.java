@@ -14,8 +14,8 @@ public class Grasshopper {
     public static void main(String[] args) {
         Grasshopper one = new Grasshopper("g1");
         Grasshopper two = new Grasshopper("g2");
-        one = two;  // Immediately after this line, only one grasshopper object i.e. 'g1' is eligible for garbage collection, since both one and two are pointing to 'g2' object
-        two = null; // Immediately after this line, only one grasshopper object i.e. 'g1' is still eligible for garbage collection. Reference one points to g1 and reference two is null
+        one = two;  // Immediately after this line, only one grasshopper object innerClassInstance.e. 'g1' is eligible for garbage collection, since both one and two are pointing to 'g2' object
+        two = null; // Immediately after this line, only one grasshopper object innerClassInstance.e. 'g1' is still eligible for garbage collection. Reference one points to g1 and reference two is null
         one = null; // Immediately after this line, both Grasshopper objects are eligible for garbage collection since both one and two point to null
     }
 

@@ -4,11 +4,11 @@ public class TernaryOperator {
 
     /**
      * Can be rewritten as:
-     * int i = 5;
-     * string result = i % 2 == 0 ? "staticField"
-     * : i % 3 == 0 ? "y"
-     * : i % 5 == 0 ? "c"
-     * : i % 7 == 0 ? "d"
+     * int innerClassInstance = 5;
+     * string result = innerClassInstance % 2 == 0 ? "staticField"
+     * : innerClassInstance % 3 == 0 ? "y"
+     * : innerClassInstance % 5 == 0 ? "c"
+     * : innerClassInstance % 7 == 0 ? "d"
      * : "e";
      */
     public static String ternaryPuzzleOne() {

@@ -6,10 +6,10 @@ public class StreamRanges {
 
   public static void main(String[] args) {
 
-    // The range method includes the starting number with the ending number i.e. 0, 1, 2, 3, 4 and 5.
+    // The range method includes the starting number with the ending number innerClassInstance.e. 0, 1, 2, 3, 4 and 5.
     IntStream intStreamRangeClosed = IntStream.rangeClosed(0, 5);
 
-    // The range method includes the starting number but not the ending number i.e. 0, 1, 2, 3, and 4.
+    // The range method includes the starting number but not the ending number innerClassInstance.e. 0, 1, 2, 3, and 4.
     IntStream intStreamRange = IntStream.range(0, 5);
 
     // print both

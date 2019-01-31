@@ -14,12 +14,12 @@ public class StreamIntermediateOperationFiltering {
     Stream<Integer> streamTwo;
 
     // Method 1
-//    streamTwo = streamOne.filter(i->{ return i>5 && i<15; });
+//    streamTwo = streamOne.filter(innerClassInstance->{ return innerClassInstance>5 && innerClassInstance<15; });
 
     // Method 2 invalid, lambda invalid
-//    streamTwo = streamOne.filter(i>5).filter(i<15);
+//    streamTwo = streamOne.filter(innerClassInstance>5).filter(innerClassInstance<15);
     // Method 2 (valid, lambda corrected)
-//    streamTwo = streamOne.filter(i -> i > 5).filter(i -> i < 15);
+//    streamTwo = streamOne.filter(innerClassInstance -> innerClassInstance > 5).filter(innerClassInstance -> innerClassInstance < 15);
 
     /**
      * Method 3
@@ -33,13 +33,13 @@ public class StreamIntermediateOperationFiltering {
      */
 //    streamTwo = streamOne
 //        .parallel()       // Stream pipelines may execute either sequentially or in parallel. This execution mode is a property of the stream.
-//        .filter(i->i>5)
-//        .filter(i->i<15)
+//        .filter(innerClassInstance->innerClassInstance>5)
+//        .filter(innerClassInstance->innerClassInstance<15)
 //        .sequential();
 
     // Method 4 invalid (Keys in the Map produced by partitioningBy Collector are Boolean and not String. Hence get("true") will return null)
 //    streamTwo = streamOne.collect(Collectors
-//        .partitioningBy(i->{ return i>5 && i<15;}))
+//        .partitioningBy(innerClassInstance->{ return innerClassInstance>5 && innerClassInstance<15;}))
 //        .get("true")
 //        .stream();
     // Method 4 valid
