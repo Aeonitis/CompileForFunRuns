@@ -33,6 +33,8 @@ public class StreamFlatMap {
         .filter(s -> s.length() > 0)
         .distinct();
 
+    //TODO get most occurring words in all total sentences w/streams
+
     lifeStream.forEach(System.out::println);
   }
 }
