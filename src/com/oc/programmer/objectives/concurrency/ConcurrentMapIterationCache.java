@@ -18,12 +18,13 @@ import java.util.concurrent.ConcurrentHashMap;
  * completed update operations holding upon their onset. For aggregate operations such as putAll and
  * clear, concurrent retrievals may reflect insertion or removal of only some entries. Similarly,
  * Iterators and Enumerations return elements reflecting the state of the hash table at some point
- * at or since the creation of the iterator/enumeration. They do not throw ConcurrentModificationException.
- * However, iterators are designed to be used by only one thread at a time.
+ * at or since the creation of the iterator/enumeration. They do not throw
+ * ConcurrentModificationException. However, iterators are designed to be used by only one thread at
+ * a time.
  *
- * NOTE:
- * Each iterator you obtain from a ConcurrentHashMap is designed to be used by a single thread and should not be passed around.
- * Sharing the same iterator between accessor threads can lead to deadlock
+ * NOTE: Each iterator you obtain from a ConcurrentHashMap is designed to be used by a single thread
+ * and should not be passed around. Sharing the same iterator between accessor threads can lead to
+ * deadlock
  */
 public class ConcurrentMapIterationCache {
 
@@ -74,4 +75,11 @@ public class ConcurrentMapIterationCache {
     }.start();
 
   }
+
+  /**
+   * Result: It may print any combination with c, with the exclusion or inclusion of a and/or b
+   * Order of iteration is not known and so the thread that removes "a" and "b", may remove them in any order.
+   * Thus, the iterator thread may or may not see "a" and/or "b" through its Iterator.
+   * However, "c" is never removed from the map and so c, will always be printed.
+   */
 }

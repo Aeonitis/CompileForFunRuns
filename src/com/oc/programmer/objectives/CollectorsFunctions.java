@@ -7,7 +7,6 @@ import java.util.stream.Collectors;
 
 public class CollectorsFunctions {
 
-
   public static void main(String[] args) {
     //What will the following code print?
     List<Item> items = Arrays.asList(
@@ -19,11 +18,9 @@ public class CollectorsFunctions {
 
     ToDoubleFunction<Item> doubleFunction = Item::getPrice;
     items.stream()
-        .collect(Collectors
-            .groupingBy(Item::getCategory)) // returns a Map where the keys are the Category values and the values are Lists of the elements.
+        .collect(Collectors.groupingBy(Item::getCategory)) // returns a Map where the keys are the Category values and the values are Lists of the elements.
         .forEach((a, b) -> {
-          double av = b.stream().collect(Collectors
-                  .averagingDouble(doubleFunction));
+          double av = b.stream().collect(Collectors.averagingDouble(doubleFunction));
           // returns the average of the values returned by the doubleFunction function applied to each element of the Stream.
           // In this case, a stream is created from the List of elements belonging to each category by the call to forEach.
 

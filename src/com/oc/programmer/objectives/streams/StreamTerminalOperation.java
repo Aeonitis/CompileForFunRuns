@@ -1,4 +1,4 @@
-package com.oc.programmer.objectives.streams.functionalinterfaces;
+package com.oc.programmer.objectives.streams;
 
 import java.util.Arrays;
 import java.util.List;
