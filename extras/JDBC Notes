@@ -1,0 +1,14 @@
+To use a third party JDBC driver for a database, steps take to retrieve a Connection using that driver in your JDBC program are:
+- Put the driver jar in the class path.
+- Retrieve a connection using DriverManager.getConnection.
+
+Starting JDBC 4.0, the JDBC Driver class is not required to be loaded explicitly in the code any more.
+Applications no longer need to explicitly load JDBC drivers using Class.forName().
+
+The DriverManager methods getConnection and getDrivers have been enhanced to support the Java Standard Edition Service Provider mechanism.
+JDBC 4.0 Drivers must include the file META-INF/services/java.sql.Driver. This file contains the name of the JDBC drivers implementation of java.sql.Driver.
+For example, to load the my.sql.Driver class, the META-INF/services/java.sql.Driver file would contain the entry:
+my.sql.Driver
+
+When the method getConnection is called, the DriverManager will attempt to locate a suitable driver from
+amongst those loaded at initialization and those loaded explicitly using the same classloader as the current applet or application.

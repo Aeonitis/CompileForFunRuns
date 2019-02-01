@@ -6,6 +6,22 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * All TerminalOperations
+ * toArray()
+ * collect()
+ * count()
+ * reduce()
+ * forEach()
+ * forEachOrdered()
+ * min()
+ * max()
+ * anyMatch()
+ * allMatch()
+ * noneMatch()
+ * findAny()
+ * findFirst()
+ */
 public class StreamTerminalOperation {
 
   public static void main(String[] args) {
