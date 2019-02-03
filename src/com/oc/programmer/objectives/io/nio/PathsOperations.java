@@ -17,6 +17,8 @@ public class PathsOperations {
   public static void main(String[] args) {
     Path dirPath = Paths.get("c:\\temp\\");
 
+    System.out.println("Symbolic Link: " + Files.isSymbolicLink(dirPath));
+
     // If the path value refers to a regular file, isDirectory() will return false and the statement will be skipped, so A is incorrect.
     if (Files.isDirectory(dirPath)) {
 
@@ -26,7 +28,7 @@ public class PathsOperations {
          * - path refers to a symbolic link in the file system.
          * - path refers to an empty directory in the file system.
          */
-        System.out.println(Files.deleteIfExists(dirPath) ? "Success" : "Try Again");
+        System.out.println(Files.deleteIfExists(dirPath) ? "Successfully Deleted" : "Failed Delete, Try Again");
       } catch (IOException e) {
         e.printStackTrace();
       }

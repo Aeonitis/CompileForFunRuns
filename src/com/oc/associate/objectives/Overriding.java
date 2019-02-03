@@ -28,7 +28,7 @@ class MyHouse implements Bungalow, House {
 public class Overriding {
 
     public static void main(String[] args) {
-        House ci = new MyHouse();
-        System.out.println(ci.getAddress());
+        House myHouse = new MyHouse();
+        System.out.println(myHouse.getAddress());
     }
 }
