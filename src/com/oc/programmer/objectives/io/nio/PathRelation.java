@@ -1,9 +1,15 @@
 package com.oc.programmer.objectives.io.nio;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
+ * Notes: 1. relativize method does not take a String as an argument. It takes a Path object. 2.
+ * relativize method is meant to convert an absolute path into a relative path.
+ *
  * Where this path and the given path do not have a root component, then a relative path can be
  * constructed.
  *
@@ -21,9 +27,9 @@ import java.nio.file.Paths;
  * path, yields a path that can be used to locate the same file as other is implementation
  * dependent.
  *
- * For example, if this path is "/a/b" and the given path is "/a/x" then the resulting
- * relative path may be "../x". If "b" is a symbolic link then is implementation dependent if
- * "a/b/../x" would locate the same file as "/a/x".
+ * For example, if this path is "/a/b" and the given path is "/a/x" then the resulting relative path
+ * may be "../x". If "b" is a symbolic link then is implementation dependent if "a/b/../x" would
+ * locate the same file as "/a/x".
  */
 public class PathRelation {
 
@@ -40,6 +46,18 @@ public class PathRelation {
      */
     Path p3 = p1.relativize(p2);
     System.out.println(p3);
+
+    relativizingNonAbsolutePathThrowsException();
+  }
+
+  /**
+   * This will throw an IllegalArgumentException saying 'other' is different type of Path. This is
+   * because a relative path cannot be constructed if only one of the paths is an absolute path.
+   * Here, p1 is an absolute path (because it starts with a root) and p2 is a relative path.
+   */
+  public static void relativizingNonAbsolutePathThrowsException() {
+    Path p1 = Paths.get("c:\\temp\\test1.txt");
+    p1.relativize(Paths.get("text2.txt"));
   }
 }
 

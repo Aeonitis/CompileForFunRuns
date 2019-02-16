@@ -34,6 +34,23 @@ public class PathsOperations {
       }
     }
 
+    subPathOperations();
+  }
+
+  public static void subPathOperations() {
+    System.out.println("subPathOperations--------------------------------------------");
+    Path pathToParseSubPaths = Paths.get("C:\\zero\\one\\two\\three.txt");
+    System.out.println(pathToParseSubPaths.getRoot());
+    System.out.println(pathToParseSubPaths.getParent());
+    System.out.println(pathToParseSubPaths.getFileSystem().getRootDirectories());
+    System.out.println(pathToParseSubPaths.getNameCount());
+    System.out.println(pathToParseSubPaths.getName(0));
+    System.out.println(pathToParseSubPaths.getName(1));
+    System.out.println(pathToParseSubPaths.getName(2));
+    System.out.println(pathToParseSubPaths.getName(3));
+    System.out.println(pathToParseSubPaths.getFileName());
+//    System.out.println(pathToParseSubPaths.getName(4));   // IllegalArgumentException
+    System.out.println("subPathOperations--------------------------------------------");
   }
 
 }

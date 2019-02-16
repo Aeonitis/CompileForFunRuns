@@ -36,6 +36,15 @@ public class SerialTransientWrites {
     body = (Body) is.readObject();
     is.close();
 
+//    /**
+//     * Interesting test: only the static fields are initialized when the JVM loads (without create one) a class!!
+//     *         Just a test I have done using only the deserialization part:
+//     */
+//    Body bodyDeserialized = null;
+//    Object objectDeserialized = (Body) is.readObject();  //here JVM loads the class initializing the static filed
+//    printBodyParts((Body) objectDeserialized);
+//    is.close();
+
     printBodyParts(body);
   }
 
