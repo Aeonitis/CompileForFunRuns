@@ -25,6 +25,15 @@ public class AtomicIntegers {
     // Invalid - AtomicInteger is not a wrapper class and so auto unboxing will not happen here and so it will not compile.
 //    int integerOfAtomicInteger = atomicInteger + 1;
 
+    updateToNewValueOnlyIfOldValueStayedTheSame();
+
   }
 
-}
+  public static void updateToNewValueOnlyIfOldValueStayedTheSame() {
+    AtomicInteger status = new AtomicInteger(1);
+
+    int oldstatus = status.get();
+    System.out.println("NewStatusUpdated: " + status.compareAndSet(oldstatus, 2));
+    }
+
+  }

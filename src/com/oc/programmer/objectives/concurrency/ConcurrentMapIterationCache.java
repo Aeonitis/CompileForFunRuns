@@ -34,6 +34,8 @@ public class ConcurrentMapIterationCache {
     stringObjectConcurrentHashMap.put("a", "aaa");
     stringObjectConcurrentHashMap.put("b", "bbb");
     stringObjectConcurrentHashMap.put("c", "ccc");
+    // Can ensure that an entry in cache won't be overwritten
+    stringObjectConcurrentHashMap.putIfAbsent("b", "BBB");
 
     /**
      * The following is the behaviour description of the EntrySet retrieved from a ConcurrentHashMap
@@ -69,7 +71,7 @@ public class ConcurrentMapIterationCache {
             .entrySet().iterator();
         while (entryIterator.hasNext()) {
           Entry<String, Object> stringObjectEntry = entryIterator.next();
-          System.out.print(stringObjectEntry.getKey() + ", ");
+          System.out.print(stringObjectEntry + ", ");
         }
       }
     }.start();

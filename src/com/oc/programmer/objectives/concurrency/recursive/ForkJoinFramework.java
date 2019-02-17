@@ -1,4 +1,4 @@
-package com.oc.programmer.objectives.concurrency;
+package com.oc.programmer.objectives.concurrency.recursive;
 
 import java.util.Arrays;
 import java.util.List;

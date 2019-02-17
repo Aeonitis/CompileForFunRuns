@@ -4,6 +4,7 @@ import java.io.BufferedOutputStream;
 import java.io.BufferedWriter;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
@@ -16,9 +17,13 @@ import java.io.PrintWriter;
  */
 public class WriteWithAll {
 
-  final static String VALID_DIR_PATH = "C:\\temp\\java\\io\\";
+  final static String VALID_DIR_PATH = "C:\\temp\\java\\xio\\";
 
   public static void main(String[] args) throws IOException {
+    File currentValidPath = new File(VALID_DIR_PATH);
+    if(!currentValidPath.exists()) {
+      currentValidPath.mkdirs();  // make all necessary dirs if not there
+    }
 
     writeWithFileOutputStream();
     writeWithPrintWriter();
@@ -35,10 +40,10 @@ public class WriteWithAll {
    */
   public static void writeWithDataOutputStream() throws IOException {
     String valueWritten = "KHJLVLJYF^&*OR&(%^%*(PGYIFGLUYFO*^R%O*YGP*IGUOH*()_^T(&_%)*^$)$*^OFUIYHGLI*&^T)_(&%T";
-    FileOutputStream fos = new FileOutputStream(VALID_DIR_PATH + "DataOutputStreamed");
-    DataOutputStream outStream = new DataOutputStream(new BufferedOutputStream(fos));
-    outStream.writeUTF(valueWritten);
-    outStream.close();
+    FileOutputStream fileOutputStream = new FileOutputStream(VALID_DIR_PATH + "DataOutputStreamed");
+    DataOutputStream dataOutputStream = new DataOutputStream(new BufferedOutputStream(fileOutputStream));
+    dataOutputStream.writeUTF(valueWritten);
+    dataOutputStream.close();
 
     // verify the results
     FileInputStream fis = new FileInputStream(VALID_DIR_PATH + "DataOutputStreamed");
@@ -71,9 +76,11 @@ public class WriteWithAll {
    */
   public static void writeWithPrintWriter() throws IOException {
     FileWriter fileWriter = new FileWriter(VALID_DIR_PATH + "writeWithPrintWriter.txt");
+    fileWriter.write(42); // Writes ASCII int, 42 for asterisk *
     PrintWriter printWriter = new PrintWriter(fileWriter);
     printWriter.print("Some String");
-    printWriter.printf("Product name is %s and its price is %d $", "iPhone", 1000);
+    printWriter.printf("The product name is %s and it's price is €%d", "Getsuga Jacket", 1000);
+    printWriter.println("...new line");
 
     printWriter.close();
   }
@@ -81,20 +88,21 @@ public class WriteWithAll {
   public static void writeWithBufferedWriter_thenCorrect()
       throws IOException {
     String str = "Hello";
-    BufferedWriter writer = new BufferedWriter(new FileWriter(VALID_DIR_PATH + "Helloworld.txt"));
-    writer.write(str);
+    BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(VALID_DIR_PATH + "Helloworld.txt"));
+    bufferedWriter.newLine();
+    bufferedWriter.write(str);
 
-    writer.close();
+    bufferedWriter.close();
   }
 
   public static void writeWithBufferedWriter_thenOldContentShouldExistToo()
       throws IOException {
     String str = "World";
-    BufferedWriter writer = new BufferedWriter(
+    BufferedWriter bufferedWriter = new BufferedWriter(
         new FileWriter(VALID_DIR_PATH + "Helloworld.txt", true));
-    writer.append(' ');
-    writer.append(str);
+    bufferedWriter.append(' ');
+    bufferedWriter.append(str);
 
-    writer.close();
+    bufferedWriter.close();
   }
 }
