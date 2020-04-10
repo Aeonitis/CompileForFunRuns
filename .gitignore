@@ -1,3 +1,8 @@
+# Keep the Code!
+!**/src/main/**
+!**/src/test/**
+!*.java
+
 # Compiled class file
 *.class
 
