@@ -29,5 +29,11 @@
 *.tar.gz
 *.rar
 
+# My hidden/private files
+hidden/*
+hidden/
+
 # Output folder
 out/
+
+#Other

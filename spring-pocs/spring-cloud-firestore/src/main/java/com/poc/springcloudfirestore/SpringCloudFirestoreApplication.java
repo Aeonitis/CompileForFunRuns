@@ -9,5 +9,4 @@ public class SpringCloudFirestoreApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringCloudFirestoreApplication.class, args);
 	}
-
 }
